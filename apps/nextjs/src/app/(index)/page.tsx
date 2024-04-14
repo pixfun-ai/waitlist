@@ -1,86 +1,127 @@
 "use client";
-import { BackgroundBeams } from "@saasfly/ui/background-beams";
-import { useState } from "react";
-import { env } from "~/env.mjs";
+
+// import { BackgroundBeams } from "@saasfly/ui/background-beams";
+import Image from "next/image";
+
+import footer from "../../../public/imgs/footer.png";
+import img1 from "../../../public/imgs/img1.png";
+import img2 from "../../../public/imgs/img2.png";
+import img3 from "../../../public/imgs/img3.png";
+import img4 from "../../../public/imgs/img4.png";
+import img5 from "../../../public/imgs/img5.png";
+import img6 from "../../../public/imgs/img6.png";
 
 export default function IndexPage() {
-    const [email, setEmail] = useState("");
-    const [emailError, setEmailError] = useState("");
+  const imagesList = [
+    {
+      src: img2.src,
+      alt: "Image 2",
+      class: "w-full rounded-[20px] shadow-3xl",
+    },
+    {
+      src: img6.src,
+      alt: "Image 6",
+      class: "w-full rounded-[20px] shadow-3xl",
+    },
+    {
+      src: img4.src,
+      alt: "Image 4",
+      class: "w-full rounded-[20px] shadow-3xl",
+    },
+    {
+      src: img1.src,
+      alt: "Image 1",
+      class: "w-full rounded-[20px] shadow-3xl",
+    },
+    {
+      src: img3.src,
+      alt: "Image 3",
+      class: "w-full rounded-[20px] shadow-3xl",
+    },
+    {
+      src: img5.src,
+      alt: "Image 5",
+      class: "w-full rounded-[20px] shadow-3xl",
+    },
+  ];
 
-    const handleEmailChange = (e) => {
-        const newEmail = e.target.value;
-        setEmail(newEmail);
-        setEmailError(validateEmail(newEmail) ? "" : "Invalid email");
-    };
-
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
-    return (
-        <section className="relative min-h-screen">
-            <div className="container mx-auto flex min-h-screen flex-col justify-center text-center">
-                <div className="mb-auto"></div>
-                <div className="py-12 lg:py-16">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-blue-500">
-                        🔥 Amazing SaaS Resources & Services!
-                    </p>
-                    <h1 className="mb-6 text-4xl font-bold lg:text-5xl">
-                        Join The Waitlist for{" "}
-                        <span className="bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-              Saasfly
-            </span>{" "}
-                        Today!
-                    </h1>
-                    <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-600">
-                        We are exploring paths to open-source commercialization. If you want
-                        to promote your open-source or SaaS service, please contact us.
-                    </p>
-                    <form
-                        action={env.NEXT_PUBLIC_GOOGLE_FORM_URL}
-                        method="POST"
-                        target="_blank"
-                    >
-                        <div className="mb-8 flex flex-col justify-center gap-4 sm:flex-row">
-                            <div className="relative z-10">
-                                <input
-                                    type="email"
-                                    placeholder="Your Email Address"
-                                    className="w-full rounded-md border bg-white px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:w-80"
-                                    value={email}
-                                    onChange={handleEmailChange}
-                                    onBlur={validateEmail}
-                                    name={env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL}
-                                    required
-                                />
-                                {emailError && (
-                                    <p className="mt-1 text-sm text-red-500">{emailError}</p>
-                                )}
-                            </div>
-                            <button
-                                type="submit"
-                                className="z-10 rounded-md bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
-                            >
-                                Join Waitlist
-                            </button>
-                        </div>
-                    </form>
-                    <div>
-                        Please make sure your Google account is logged in.
-                    </div>
-                    <div className="relative z-10">
-                        <a
-                            href="https://nextify.ltd"
-                            className="text-sm font-semibold text-blue-500 hover:text-blue-600"
-                        >
-                            More Details →
-                        </a>
-                    </div>
-                </div>
-                <div className="mt-auto"></div>
+  return (
+    <section className="container mt-contentTop flex w-full flex-wrap justify-between md:flex-nowrap">
+      <div className="flex w-full flex-col px-4 sm:w-contentLeftBox sm:px-0">
+        <div className="w-contentTitle text-titlexl font-bold">
+          Quickly generate popular animated stories
+        </div>
+        <div className="w-contentDecs mt-11 text-2xl font-normal text-[#646464]">
+          <div>Pixfun is an innovative Al animation video creatorfor</div>
+          <div>one-stop creation, no prompt learningneeded, </div>
+          <div>with personalized lP characters and avast library of</div>
+          <div>popular video templates.</div>
+          <div className="mt-9 font-normal">
+            Choose from over 100 characters and 10+ styles.
+          </div>
+        </div>
+        <div className="flex-grow">
+          <div className="mt-subcribeTop w-contentLeftBox">
+            <div className="text-2xl text-black">
+              In development, subscribe for updates.
             </div>
-            <BackgroundBeams className="absolute inset-0" />
-        </section>
-    );
+            <div className="relative mt-6 h-subcribeHeight w-full rounded-r-[20px]">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="absolute h-full w-full rounded-[20px] border-2 border-r-0 px-4 py-2 text-subcribexl text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+              <button className="absolute right-0 h-full w-52 rounded-[20px] border-2 border-l-0 bg-pixColor px-4 py-3 text-subcribexl font-bold leading-[60px] text-white">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 w-full text-center">
+          <Image
+            src={footer.src}
+            alt="footer"
+            width={280}
+            height={66}
+            objectFit="cover"
+          />
+        </div>
+      </div>
+      <div className="my-4 w-full sm:my-0 sm:w-contentRightBox">
+        <div className="flex justify-center gap-x-5">
+          <div className="flex flex-col gap-y-5" style={{ width: "280px " }}>
+            {imagesList.slice(0, 3).map((image, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  width={280}
+                  height={320}
+                  className={image.class}
+                  objectFit="cover"
+                />
+              );
+            })}
+          </div>
+          <div className="flex flex-col gap-y-5" style={{ width: "280px " }}>
+            {imagesList.slice(3, 6).map((image, index) => {
+              return (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  width={280}
+                  height={320}
+                  className={image.class}
+                  objectFit="cover"
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

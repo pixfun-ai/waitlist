@@ -4,9 +4,10 @@ import localFont from "next/font/local";
 import "~/styles/globals.css";
 
 import { cn } from "@saasfly/ui";
-import { Toaster } from "@saasfly/ui/toaster";
 
-import { TailwindIndicator } from "~/components/tailwind-indicator";
+// import { Toaster } from "@saasfly/ui/toaster";
+
+// import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
 import { siteConfig } from "~/config/site";
 
@@ -76,12 +77,12 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
         >
           {children}
-          <Toaster />
-          <TailwindIndicator />
+          {/* <Toaster /> */}
+          {/* <TailwindIndicator /> */}
         </ThemeProvider>
       </body>
     </html>

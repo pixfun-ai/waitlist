@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Saasfly",
-  description: "We provide an easier way to build saas service in production",
+  name: "PIXFUN",
+  description: "Welcom To PIXFUN",
   url: "https://github.com/saasfly/saasfly",
   ogImage: "",
   links: {

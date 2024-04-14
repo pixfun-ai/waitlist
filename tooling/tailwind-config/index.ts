@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        transpanent: "transparent",
+        current: "currentColor",
+        pixColor: "#7948EA",
+        funColor: "#95D904",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -108,6 +112,26 @@ export default {
         "meteor-effect": "meteor 5s linear infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      width: {
+        contentLeftBox: "640px",
+        contentRightBox: "580px",
+        contentTitle: "634px",
+      },
+      height: {
+        subcribeHeight: "90px",
+      },
+      margin: {
+        contentTop: "100px",
+        subcribeTop: "116px",
+      },
+      fontSize: {
+        titlexl: ["48px", "65px"],
+        subcribexl: ["28px", "66px"],
+        subcribBtnexl: ["32px", "66px"],
+      },
+      boxShadow: {
+        "3xl": "0px 2px 4px  rgba(0, 0, 0, 0.25)",
       },
     },
   },
