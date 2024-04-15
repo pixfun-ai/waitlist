@@ -1,6 +1,9 @@
 "use client";
 
 // import { BackgroundBeams } from "@saasfly/ui/background-beams";
+import { useState } from "react";
+import { env } from "~/env.mjs";
+
 import Image from "next/image";
 
 import footer from "../../../public/imgs/footer.png";
@@ -12,6 +15,19 @@ import img5 from "../../../public/imgs/img5.png";
 import img6 from "../../../public/imgs/img6.png";
 
 export default function IndexPage() {
+  const [email, setEmail] = useState("");
+    const [emailError, setEmailError] = useState("");
+
+    const handleEmailChange = (e) => {
+        const newEmail = e.target.value;
+        setEmail(newEmail);
+        setEmailError(validateEmail(newEmail) ? "" : "Invalid email");
+    };
+
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
   const imagesList = [
     {
       src: img2.src,
@@ -61,6 +77,11 @@ export default function IndexPage() {
           </div>
         </div>
         <div className="flex-grow">
+        <form
+                        action={env.NEXT_PUBLIC_GOOGLE_FORM_URL}
+                        method="POST"
+                        target="_blank"
+                    >
           <div className="mt-subcribeTop w-contentLeftBox">
             <div className="text-2xl text-black">
               In development, subscribe for updates.
@@ -69,14 +90,22 @@ export default function IndexPage() {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="absolute h-full w-full rounded-[20px] border-2 border-r-0 px-4 py-2 text-subcribexl text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="absolute h-full w-full rounded-[20px] border-2 border-r-0 px-4 py-2 text-subcribexl text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"  value={email}
+                onChange={handleEmailChange}
+                onBlur={validateEmail}
+                name={env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL}
                 required
               />
-              <button className="absolute right-0 h-full w-52 rounded-[20px] border-2 border-l-0 bg-pixColor px-4 py-3 text-subcribexl font-bold leading-[60px] text-white">
+              <button type="submit" className="absolute right-0 h-full w-52 rounded-[20px] border-2 border-l-0 bg-pixColor px-4 py-3 text-subcribexl font-bold leading-[60px] text-white">
                 Subscribe
               </button>
+
             </div>
+            {emailError && (
+                <p className="mt-1 text-lg text-red-500">{emailError}</p>
+              )}
           </div>
+          </form>
         </div>
         <div className="mt-4 w-full text-center">
           <Image src={footer.src} alt="footer" width={280} height={66} />

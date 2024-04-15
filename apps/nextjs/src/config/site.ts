@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "PIXFUN",
-  description: "Welcom To PIXFUN",
-  url: "https://github.com/saasfly/saasfly",
+  description: "PixFun is an innovative AI video creation platform, unleash the full potential of video creation with our powerful generative AI",
+  url: "https://www.pixfun.ai",
   ogImage: "",
   links: {
     github: "https://github.com/saasfly/saasfly",

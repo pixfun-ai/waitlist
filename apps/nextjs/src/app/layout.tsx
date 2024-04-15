@@ -29,20 +29,17 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "Shadcn ui",
-    "Sass",
-    "Fast ",
-    "Simple ",
-    "Easy",
-    "Cloud Native",
+    "pixfun",
+    "ai video generator",
+    "ai generator",
+    "generative ai",
   ],
   authors: [
     {
-      name: "Saasfly",
+      name: "pixfun",
     },
   ],
-  creator: "Saasfly",
+  creator: "pixfun",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -56,7 +53,7 @@ export const metadata = {
     shortcut: "/favicon-16x16.ico",
     // apple: "/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://waitlist.saasfly.io/"),
+  metadataBase: new URL("https://www.pixfun.ai/"),
   // manifest: `${siteConfig.url}/site.webmanifest`,
 };
 

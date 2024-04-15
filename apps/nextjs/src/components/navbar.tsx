@@ -20,9 +20,9 @@ export function NavBar() {
             <span className="text-pixColor">PIX</span>
             <span className="text-funColor">FUN</span>
           </div>
-          <div className="cursor-pointer text-base font-normal text-[#383838] sm:text-xl">
+          {/* <div className="cursor-pointer text-base font-normal text-[#383838] sm:text-xl">
             English
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
