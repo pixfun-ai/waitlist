@@ -79,18 +79,12 @@ export default function IndexPage() {
           </div>
         </div>
         <div className="mt-4 w-full text-center">
-          <Image
-            src={footer.src}
-            alt="footer"
-            width={280}
-            height={66}
-            objectFit="cover"
-          />
+          <Image src={footer.src} alt="footer" width={280} height={66} />
         </div>
       </div>
       <div className="my-4 w-full sm:my-0 sm:w-contentRightBox">
         <div className="flex justify-center gap-x-5">
-          <div className="flex flex-col gap-y-5" style={{ width: "280px " }}>
+          <div className="w-imgBox flex flex-col gap-y-5">
             {imagesList.slice(0, 3).map((image, index) => {
               return (
                 <Image
@@ -100,12 +94,11 @@ export default function IndexPage() {
                   width={280}
                   height={320}
                   className={image.class}
-                  objectFit="cover"
                 />
               );
             })}
           </div>
-          <div className="flex flex-col gap-y-5" style={{ width: "280px " }}>
+          <div className="w-imgBox flex flex-col gap-y-5">
             {imagesList.slice(3, 6).map((image, index) => {
               return (
                 <Image
@@ -115,7 +108,6 @@ export default function IndexPage() {
                   width={280}
                   height={320}
                   className={image.class}
-                  objectFit="cover"
                 />
               );
             })}

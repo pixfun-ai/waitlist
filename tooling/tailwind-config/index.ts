@@ -114,6 +114,7 @@ export default {
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       width: {
+        imgBox: "280px",
         contentLeftBox: "640px",
         contentRightBox: "580px",
         contentTitle: "634px",

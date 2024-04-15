@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 // import type { MainNavItem } from "~/types";
 
 // interface NavBarProps {
