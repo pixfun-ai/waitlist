@@ -1,5 +1,17 @@
 {
   "name": "nextjs-template",
+  "devDependencies": {
+    "@turbo/gen": "1.13.2",
+    "check-dependency-version-consistency": "4.1.0",
+    "prettier": "3.2.5",
+    "turbo": "1.13.2",
+    "typescript": "5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.1.2",
+  "prettier": "@saasfly/prettier-config",
   "private": true,
   "scripts": {
     "build": "turbo build ",
@@ -15,21 +27,12 @@
     "check-deps": "check-dependency-version-consistency .",
     "gen": "turbo gen --config 'turbo/generators/config.ts'"
   },
-  "devDependencies": {
-    "@turbo/gen": "1.13.2",
-    "prettier": "3.2.5",
-    "turbo": "1.13.2",
-    "typescript": "5.4.5",
-    "check-dependency-version-consistency": "4.1.0"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "prettier": "@saasfly/prettier-config",
   "workspaces": [
     "apps/*",
     "packages/*",
     "tooling/*"
   ],
-  "packageManager": "bun@1.1.2"
+  "dependencies": {
+    "react-icons": "^5.1.0"
+  }
 }

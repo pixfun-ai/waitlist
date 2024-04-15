@@ -3,10 +3,9 @@
 // import { BackgroundBeams } from "@saasfly/ui/background-beams";
 import { useState } from "react";
 import { env } from "~/env.mjs";
+import { BsTwitterX, BsYoutube  } from "react-icons/bs";
 
 import Image from "next/image";
-
-import footer from "../../../public/imgs/footer.png";
 import img1 from "../../../public/imgs/img1.png";
 import img2 from "../../../public/imgs/img2.png";
 import img3 from "../../../public/imgs/img3.png";
@@ -107,9 +106,15 @@ export default function IndexPage() {
           </div>
           </form>
         </div>
-        <div className="mt-4 w-full text-center">
-          <Image src={footer.src} alt="footer" width={280} height={66} />
+        <div className="flex">
+        <a href="#" className="w-50 mt-4 text-2xl">
+          <BsTwitterX />
+        </a>
+        <a href="#" className="w-50 mt-4 ml-6 text-2xl">
+          <BsYoutube />
+        </a>
         </div>
+
       </div>
       <div className="my-4 w-full sm:my-0 sm:w-contentRightBox">
         <div className="flex justify-center gap-x-5">
